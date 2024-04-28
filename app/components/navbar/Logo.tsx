@@ -9,7 +9,8 @@ const Logo = () => {
 
 
     return (
-        <Image
+        <div className="flex  items-center gap-5">
+            <Image
             alt="Logo"
             className="hidden md:block cursor-pointer"
             height={50}
@@ -17,8 +18,9 @@ const Logo = () => {
             src="/logo.png"
             onClick={() => router.push("/")}
 
-        />
-
+            />
+            
+        </div>
 
     );
 }
