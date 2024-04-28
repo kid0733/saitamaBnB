@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
+import ClientOnly from "./components/ClientOnly";
+import Modal from "./components/modals/modals";
 
 const nunito = Nunito({ 
   weight: ["400", "700"], 
@@ -23,7 +25,10 @@ export default function RootLayout({
     <html lang="en">
       <link rel="shortcut icon" href="/logo.png" />
       <body className={nunito.className}>
-        <Navbar/>
+        <ClientOnly>
+          <Modal isOpen title="hello world" actionLabel="click."/>
+          <Navbar/>  
+        </ClientOnly>
         {children}
       </body>
     </html>
